@@ -28,7 +28,7 @@ The paper cites Silverman’s *Arithmetic of Elliptic Curves*. The MaRDI/zbMATH 
 
 Mechanism (standard translation): three fixed differences produce the curve of \(X\) such that \(X+d_1^2,X+d_2^2,X+d_3^2\) are all squares, birationally an elliptic curve. Positive Mordell–Weil rank yields infinitely many \(n\) sharing those three differences; any \(k\) of them give the reviewed theorem, and any three of them give Erdős 885 for \(k=3\).
 
-The original PDF was not recovered in this workspace (publisher / Sci-Hub fetches failed). Reproduction of the explicit Weierstrass model remains a live task; the qualitative mechanism is not in doubt.
+The original PDF was not recovered in this workspace (publisher fetches failed). An independent Weierstrass model for the differences \((6,54,111)\) is recorded in `research/family_A_elliptic.md`; it reconstructs the mechanism (positive rank \(\Rightarrow\) arbitrarily many \(n\) sharing three differences after scaling) rather than Jiménez-Urroz’s numbered equations.
 
 ### Bremner 2019
 
@@ -41,7 +41,7 @@ The original PDF was not recovered here. The obstruction to a naive extension is
 ### Formal statements and partial computational notes
 
 - DeepMind Formal Conjectures: `FormalConjectures/ErdosProblems/885.lean` states the problem; the \(k=2,3,4\) variants are marked solved but still `sorry`.
-- Forum note of Sam Mausberg (Lean/Aristotle): \(|Y(756000,15971200,45130176)|\ge 5\), so there is no universal bound \(|Y(a,b,c)|\le 4\); and the exact computation \(D(79200)\cap D(227205)\cap D(1258560)=\{36,468,692,1028\}\). These are \((|N_s|,|\cap|)=(5,4)\) and \((3,4)\) configurations, not a solution of \(k=5\).
+- Forum note of Sam Mausberg (Lean/Aristotle): \(|Y(756000,15971200,45130176)|\ge 5\), so there is no universal bound \(|Y(a,b,c)|\le 4\); and the exact computation \(D(79200)\cap D(227205)\cap D(1258560)=\{36,468,692,1028\}\). The \(Y\)-set of five integers transposes to a \((|N_s|,|\cap|)=(4,4)\) grid, not a \(k=5\) example. The triple \((79200,227205,1258560)\) is a \((3,4)\) configuration of Guiduli type. Neither solves \(k=5\).
 
 ## Neighbouring literature (transfer, not reduction)
 

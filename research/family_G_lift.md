@@ -185,6 +185,14 @@ larger denominator could still give, after homogeneous scaling, a fifth
 integer row sharing four differences.  Even that would leave the separate
 task of finding a fifth common difference.
 
+Round 2 also tested a different candidate lift: take the three
+Jiménez-Urroz seed points on \(Y^2=X(X-49140)(X-37620)\) and adjoin the
+multiple \(2P\). After the correct scaling \(\lambda=36047\) one obtains
+four integers sharing three differences. A complete extra-column search
+returns exactly those three scaled differences
+\(216282,1946538,4001217\). So this is not a \(k=4\) lift, let alone a
+\(k=5\) lift. The same holds for \(P+Q\). See `compute/elliptic_k3.py`.
+
 ## Reproduction
 
 Run:

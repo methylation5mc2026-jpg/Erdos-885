@@ -1,0 +1,39 @@
+% Status report only. This file does not contain a proof of Erdős 885.
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Erdős 885: status report (no claimed proof)}
+\author{Research workspace}
+\date{August 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{This document does not claim a theorem for every \(k\).}
+
+The conjecture asks whether for every \(k\ge 1\) there exist integers
+\(N_1<\cdots<N_k\) with \(\lvert\bigcap_i D(N_i)\rvert\ge k\), where
+\(D(n)=\{\lvert a-b\rvert:n=ab\}\).
+
+Cases \(k=2,3,4\) are in the literature. This workspace reconstructs
+their mechanisms, proves auxiliary lemmas, and records an adversarial
+audit. It does not prove the remaining cases and does not disprove them.
+
+\paragraph{Question 1.}
+A complete proof must differ from Erdős--Rosenfeld (two differences),
+Jiménez-Urroz (three differences via a positive-rank elliptic curve),
+Bremner (a special locus for four differences), and Choudhry's
+unrestricted additive square tables (the square-side condition is
+exactly 885). None of those texts supplies an argument for arbitrary
+\(k\).
+
+\paragraph{Question 2.}
+The naive count \(2-(k-2)^2<0\) for \(k\ge 4\) explains failed search.
+The geometric obstruction of the fixed-difference method is the genus
+\(g=1+2^{m-2}(m-3)\). Crossing that obstruction for every \(k\) requires
+an identity, a lift \(k\to k+1\), or a local-to-global theorem that is
+not presently known. Local solubility holds for every \(k\) and is not
+a disproof.
+
+See \texttt{paper/status.md} for the full status note and
+\texttt{lemmas/missing\_for\_all\_k.md} for the remaining targets.
+
+\end{document}

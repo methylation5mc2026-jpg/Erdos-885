@@ -16,7 +16,7 @@ D(n)=\bigl\{\lvert a-b\rvert:n=ab\bigr\}.
 \bigl\lvert\textstyle\bigcap_{i=1}^k D(N_i)\bigr\rvert\ge k.
 \]
 
-Status: proved for \(k=2\) (Erdős–Rosenfeld 1997), \(k=3\) (Jiménez-Urroz 1999), \(k=4\) (Bremner 2019). Open for general \(k\).
+Status: proved for \(k=2\) (Erdős–Rosenfeld 1997), \(k=3\) (Jiménez-Urroz 1999), \(k=4\) (Bremner 2019). Open for general \(k\). This repository does **not** contain a proof for every \(k\), nor a disproof. Round 2 of the research system, including the adversarial audit and the concrete missing lemma, is in `research/round2.md`, `research/audit.md`, and `lemmas/missing_for_all_k.md`.
 
 ## Layout
 
