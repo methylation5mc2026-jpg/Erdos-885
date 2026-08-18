@@ -1,0 +1,50 @@
+{
+  "choudhry_admissible_translate_search": {
+    "definition": "Search y_j^2-x^2=q^2 B_j with 0<x^2<q^2 min(A)",
+    "reduced_denominator_bound": 20000,
+    "results": {
+      "choudhry_5x3_theorem_2": {
+        "found": false,
+        "candidates_tested": 45471
+      },
+      "choudhry_4x4_theorem_3": {
+        "found": false,
+        "candidates_tested": 158008
+      },
+      "choudhry_4x4_theorem_4": {
+        "found": false,
+        "candidates_tested": 21327
+      },
+      "lagrange_4x4_cited_by_choudhry": {
+        "found": false,
+        "candidates_tested": 6645
+      }
+    }
+  },
+  "five_by_five_search": {
+    "root_bound": 2000,
+    "incidence": {
+      "definition": "v^2-u^2=c with 1<=u<v<=2000",
+      "distinct_positive_labels": 990682,
+      "labels_with_support_at_least_5": 75122
+    },
+    "unrestricted": {
+      "domain": "B_1=0, B_j>0, all cell roots in [1,2000]",
+      "target_biclique": "K_{5,4}; B_1=0 is the fifth column",
+      "found": false,
+      "frequent_pairs": 190887,
+      "deepest_row_set_with_at_least_4_common_positive_offsets": 3
+    },
+    "square_side": {
+      "domain": "A_i>0, d_j>0, all d_j and cell roots in [1,2000]",
+      "target_biclique": "K_{5,5}",
+      "found": false,
+      "frequent_pairs": 127232,
+      "deepest_row_set_with_at_least_5_common_columns": 3
+    },
+    "near_witness": {
+      "rows": [4, 332, 1492],
+      "five_common_positive_labels": [17940, 276660, 913920, 1263360, 1666665]
+    }
+  }
+}

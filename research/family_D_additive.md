@@ -217,6 +217,9 @@ The command is
 python3 compute/search_additive_tables.py --bound 2000
 ```
 
+The compact machine-readable output is recorded in
+`examples/family_D_bounded_results.json`.
+
 These searches neither produce nor disprove a \(5\times5\) table outside
 the stated boxes.  In particular, the unrestricted search is not reported
 as a solution of Erdős 885.
