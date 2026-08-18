@@ -54,7 +54,8 @@ differences are immediate.
 Write \(t=ac\). Since \(a\) is proper, \(c\ge2\), and
 
 \[
-y-\beta=a(c-1)^2+c-1>0.
+y-\beta=a(c-1)^2+c-1>0,\qquad
+x=a(c^2-1)+c>1.
 \]
 
 All four factors are therefore positive. Also every such \(a\) lies in

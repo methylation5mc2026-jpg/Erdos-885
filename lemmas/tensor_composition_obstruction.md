@@ -63,6 +63,34 @@ which has the same row dependence. These parallel and crossed products
 are the two multiplicative pairings obtained from the identity
 \((s^2-d^2)(t^2-e^2)=S^2-D^2\).
 
+Even a positive scalar twist depending on the composite column cannot
+repair either pairing. For the parallel pairing, let
+
+\[
+U=\lambda u_{ij}p_{r\ell},\qquad
+V=\lambda^{-1}v_{ij}q_{r\ell},\qquad \lambda>0.
+\]
+
+This still has product \(N_iM_r\), while
+
+\[
+V-U=(\lambda^{-1}-\lambda)u_{ij}p_{r\ell}
++\lambda^{-1}(e_\ell u_{ij}+d_jp_{r\ell}+d_je_\ell).       \tag{3}
+\]
+
+If both \(u_{ij}\) and \(p_{r\ell}\) take two values as the source rows
+vary, the alternating sum of (3) over the resulting \(2\times2\)
+rectangle is
+
+\[
+(\lambda^{-1}-\lambda)(u_1-u_2)(p_1-p_2).
+\]
+
+Constancy forces \(\lambda=1\), after which the untwisted obstruction
+applies. The crossed pairing has the same argument: its mixed
+coefficient is again \(\lambda^{-1}-\lambda\), and at \(\lambda=1\)
+its difference is \(d_jp_{r\ell}-e_\ell u_{ij}\).
+
 ## Concrete counterexample
 
 The valid \(2\times2\) table
@@ -107,7 +135,7 @@ composite column, but its induced product is
 
 \[
 \frac{S^2-D^2}{4}
-=d_j^2M_r+e_\ell^2N_i+4N_iM_r.                             \tag{3}
+=d_j^2M_r+e_\ell^2N_i+4N_iM_r.                             \tag{4}
 \]
 
 Hence it is generally not constant on a composite row.
@@ -123,7 +151,7 @@ N&d=15&d=48\\ \hline
 \]
 
 Its centered entries are \((25,52)\) and \((39,60)\). In the
-composite row \((100,100)\), formula (3) gives products
+composite row \((100,100)\), formula (4) gives products
 
 \[
 85000\quad\text{at column }(15,15),\qquad

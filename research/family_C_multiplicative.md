@@ -180,8 +180,9 @@ row-only.
 
 This does not prove that every imaginable nonlinear composition is
 impossible. It excludes the standard monomial Kronecker pairings, the
-two split-norm/Brahmagupta pairings, the direct sum without separately
-solving its cross blocks, and the direct Euclidean-norm tensor.
+two split-norm/Brahmagupta pairings, their positive column-scalar
+twists, the direct sum without separately solving its cross blocks,
+and the direct Euclidean-norm tensor.
 
 ## 4. Gaussian and Hurwitz composition
 
@@ -205,12 +206,13 @@ Gaussian multiplication gives
 =(d_je_\ell-4m_in_r)+2(d_jn_r+e_\ell m_i)i.                \tag{3}
 \]
 
-The candidate real coordinate in (3) depends on the composite row,
-and the candidate half-imaginary coordinate depends on the composite
-column. Thus norm multiplicativity produces valid Pythagorean
-identities cell by cell but not the row/column separation required by
-the grid. The \(N=100,324\) table above supplies a numerical
-counterexample entirely inside \(\mathbb Z[i]\).
+The candidate real coordinate in (3) depends on the composite row, and
+the candidate half-imaginary coordinate also depends on the composite
+column. In fact, both coordinates mix the two index types. Thus norm
+multiplicativity produces valid Pythagorean identities cell by cell but
+not the row/column separation required by the grid. The \(N=100,324\)
+table above supplies a numerical counterexample entirely inside
+\(\mathbb Z[i]\).
 
 Moreover,
 
