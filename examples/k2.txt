@@ -1,0 +1,16 @@
+# k=2 explicit example (Erdős–Rosenfeld factorization method)
+
+Differences: 16 and 26.
+
+- N1 = 192
+  - 4*192+16^2 = 1024 = 32^2
+  - 4*192+26^2 = 1444 = 38^2
+- N2 = 2640
+  - 4*2640+16^2 = 10816 = 104^2
+  - 4*2640+26^2 = 11236 = 106^2
+
+Construction: α=13, β=8, (α-β)(α+β)=105=3*5*7.
+Factorization 3*35 gives (x,y)=(19,16), M=x^2-α^2=192.
+Factorization 1*105 gives (x,y)=(53,52), M=2640.
+
+Verified by `compute/factor_diff.py` logic: 16,26 ∈ D(192)∩D(2640).

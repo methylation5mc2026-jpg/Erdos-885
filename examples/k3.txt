@@ -1,0 +1,13 @@
+# k=3 explicit example
+
+N = 112, 952, 3240
+common positive differences = {6, 54, 111}
+
+Checks 4N+d^2:
+
+- 112: 4*112+36=484=22^2; 4*112+2916=3364=58^2; 4*112+12321=12769=113^2
+- 952: 4*952+36=3844=62^2; 4*952+2916=6724=82^2; 4*952+12321=16129=127^2
+- 3240: 4*3240+36=12996=114^2; 4*3240+2916=15876=126^2; 4*3240+12321=25281=159^2
+
+Found by exhaustive search among n<4000 with |D(n)|≥3.
+This is the original statement for k=3 (three integers, three common differences), not merely arbitrarily many integers sharing two differences.
