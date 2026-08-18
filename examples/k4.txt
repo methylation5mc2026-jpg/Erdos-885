@@ -1,0 +1,22 @@
+N = 26128575, 291722431, 561117375, 713526975
+d = 126, 16110, 33390, 75390
+
+Verified: every 4*N_i + d_j^2 is a square. Exhaustive divisor
+enumeration of d2^2-d1^2 shows these are exactly the positive integers
+sharing all four differences.
+
+Square-root matrix s_ij:
+
+             126    16110   33390   75390
+26128575     10224  19080   34920   76080
+291722431    34160  37768   47768   82768
+561117375    47376  50040   57960   89040
+713526975    53424  55800   63000   92400
+
+This is a k=4 witness. Web indexing associated it with Bremner 2019; the
+PDF was not recovered in this workspace. It is not a proof for k=5.
+
+A second k=4 witness (Mausberg Y-set transpose):
+
+N = 648000, 5869125, 17155125, 109763424
+d = 660, 1860, 8020, 13452

@@ -1,0 +1,14 @@
+k=3 rational identity specialised at t=17, denominators cleared.
+
+N = 241425020498422232126700, 13750382663581444642227180, 51731909713389317392684320
+d = 6019710104396, 8343379505036, 3429556395508
+
+All nine 4*N_i + d_j^2 are squares (verified). This is the family-B
+identity, not a new k, and not a k=4 example.
+
+A four-integer / three-difference configuration from the Jiménez-Urroz
+curve (P,Q,R,2P) after lambda=36047; extra-column search finds no fourth
+difference:
+
+N = 145531255408, 1237015670968, 4210011317160, 4813616286400
+d = 216282, 1946538, 4001217

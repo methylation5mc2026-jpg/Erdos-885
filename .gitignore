@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.lake/
+*.olean
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+.DS_Store
