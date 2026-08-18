@@ -1,91 +1,60 @@
 #!/usr/bin/env python3
-"""Local solubility of s_ij^2 ≡ 4 N_i + d_j^2 (mod m).
+"""Constructive local checks for s_ij^2 = 4*N_i + d_j^2.
 
-Distinctness of N_i is over Z, not over Z/mZ. Requiring distinct residues
-is invalid (and wrongly suggested an obstruction for k=5 mod 8).
+Distinct integers need not have distinct residues.  Requiring distinct
+residue classes gives false "obstructions" as soon as k is larger than the
+modulus.  These witnesses keep N_i and d_j distinct as rational integers
+while allowing their residues to coincide.
 """
 
 from __future__ import annotations
-
-import itertools
-import random
-
 
 def squares_mod(m: int) -> set[int]:
     return {i * i % m for i in range(m)}
 
 
-def admissible_N_for_d(d: int, m: int, sq: set[int]) -> set[int]:
-    d2 = (d * d) % m
-    return {n for n in range(m) if (4 * n + d2) % m in sq}
+def two_adic_data(k: int) -> tuple[list[int], list[int]]:
+    """N_i=2i and d_j=2j-1 make every right side 1 modulo 8."""
+    return [2 * i for i in range(1, k + 1)], [2 * j - 1 for j in range(1, k + 1)]
 
 
-def exists_mod(k: int, m: int) -> bool:
+def odd_adic_data(k: int, p: int) -> tuple[list[int], list[int]]:
+    """For odd p, every right side is in 1+p*Z_p."""
+    if p < 3 or p % 2 == 0:
+        raise ValueError("p must be odd")
+    return [p * i for i in range(1, k + 1)], [1 + p * j for j in range(1, k + 1)]
+
+
+def verify_residue_witness(ns: list[int], ds: list[int], m: int) -> bool:
     sq = squares_mod(m)
-    slots = [admissible_N_for_d(d, m, sq) for d in range(m)]
-    # Need k (not necessarily distinct) columns d_j whose admissible-N
-    # sets have a common intersection of size at least 1; we then need k
-    # residues N_i in that intersection. Repeating a residue is allowed
-    # locally. Existence over Z/mZ is: there exist d1..dk and N1..Nk
-    # satisfying the k^2 congruences.
-    # Equivalent: choose a nonempty family of d's whose common admissible
-    # set S is nonempty, then pick N_i in S and d_j in the family.
-    for cols in itertools.product(range(m), repeat=k):
-        S = set(range(m))
-        for d in cols:
-            S &= slots[d]
-            if not S:
-                break
-        if S:
-            return True
-    return False
-
-
-def exists_mod_fast(k: int, m: int, trials: int = 50000) -> bool:
-    """Random search without distinctness; used only as a heuristic."""
-    sq = squares_mod(m)
-    rng = random.Random(k * 1000 + m)
-    slots = [admissible_N_for_d(d, m, sq) for d in range(m)]
-    nonempty_d = [d for d in range(m) if slots[d]]
-    if not nonempty_d:
-        return False
-    for _ in range(trials):
-        ds = [rng.choice(nonempty_d) for _ in range(k)]
-        S = set(range(m))
-        ok = True
-        for d in ds:
-            S &= slots[d]
-            if not S:
-                ok = False
-                break
-        if ok and S:
-            return True
-    return False
-
-
-def analyze_mod8() -> None:
-    sq = squares_mod(8)
-    print("mod 8 squares", sorted(sq))
-    for d in range(8):
-        print(f" d={d} d^2={d*d%8} admissible N={sorted(admissible_N_for_d(d,8,sq))}")
-    print(
-        "If any d is odd, all N must be even. Even residues mod 8: 0,2,4,6 "
-        "(four of them). k=5 integer solutions may repeat residues mod 8."
+    return (
+        len(ns) == len(set(ns))
+        and len(ds) == len(set(ds))
+        and all((4 * n + d * d) % m in sq for n in ns for d in ds)
     )
-    print("exists_mod k=5 mod 8", exists_mod(5, 8))
-    print("exists_mod k=6 mod 8", exists_mod(6, 8))
 
 
 def main() -> None:
-    analyze_mod8()
-    for k in range(1, 7):
-        row = []
-        for m in (8, 16, 5, 7, 3):
-            if m ** k <= 2_000_000:
-                row.append(f"{m}:{exists_mod(k, m)}")
-            else:
-                row.append(f"{m}:fast={exists_mod_fast(k, m)}")
-        print(f"k={k}", " ".join(row))
+    for m in (8, 16, 5, 7):
+        print(f"mod {m} squares {sorted(squares_mod(m))}")
+
+    for k in (5, 6):
+        ns2, ds2 = two_adic_data(k)
+        for m in (8, 16):
+            print(
+                f"k={k} mod {m}: {verify_residue_witness(ns2, ds2, m)} "
+                f"(N_i=2i, d_j=2j-1)"
+            )
+
+        for p in (3, 5, 7, 11, 13, 17, 19, 23, 29, 31):
+            nsp, dsp = odd_adic_data(k, p)
+            print(
+                f"k={k} mod {p}: {verify_residue_witness(nsp, dsp, p)} "
+                f"(N_i={p}i, d_j=1+{p}j)"
+            )
+
+    print("Odd-p lift: each right side lies in 1+pZ_p; Hensel at x=1 applies.")
+    print("2-adic lift: each right side is 1 mod 8, hence is a square in Z_2.")
 
 
 if __name__ == "__main__":
